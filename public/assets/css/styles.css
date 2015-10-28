@@ -1,0 +1,28 @@
+
+html, body {
+    height: 100%;
+}
+
+.header {
+    text-align: center;
+}
+
+#svg {
+    display: block;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    /*overflow: hidden;*/
+    background-color: blue;
+    margin: -80px auto 50px;
+}
+
+#path {
+    z-index:10;
+}
+
+#ride-good #clouds {
+    display: none;
+}

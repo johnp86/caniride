@@ -1,0 +1,462 @@
+@import "mixins.scss";
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+
+$hellyeah: #fc8732;
+$nope: #7f868e;
+
+@font-face {
+  font-family: 'Climacons-Font';
+  src: url('../fonts/climacons-webfont.eot');
+  src: url('../fonts/climacons-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/climacons-webfont.svg#Climacons-Font') format("svg"), url('../fonts/climacons-webfont.woff') format("woff"), url('../fonts/climacons-webfont.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+canvas {
+    display: block;
+    float: left;
+    margin-left: 8px;
+    margin-top: 8px;
+  }
+
+.climacon {
+  &:before {
+    font-family: 'Climacons-Font';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size: 56px;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    top: 7px;
+  }
+  &.cloud {
+    &:before {
+      content: "\e000";
+    }
+    &.sun:before {
+      content: "\e001";
+    }
+    &.moon:before {
+      content: "\e002";
+    }
+  }
+  &.rain {
+    &:before, &.cloud:before {
+      content: "\e003";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e004";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e005";
+    }
+  }
+  &.showers {
+    &:before, &.cloud:before {
+      content: "\e006";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e007";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e008";
+    }
+  }
+  &.downpour {
+    &:before, &.cloud:before {
+      content: "\e009";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e00a";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e00b";
+    }
+  }
+  &.drizzle {
+    &:before, &.cloud:before {
+      content: "\e00c";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e00d";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e00e";
+    }
+  }
+  &.sleet {
+    &:before, &.cloud:before {
+      content: "\e00f";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e010";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e011";
+    }
+  }
+  &.hail {
+    &:before, &.cloud:before {
+      content: "\e012";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e013";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e014";
+    }
+  }
+  &.flurries {
+    &:before, &.cloud:before {
+      content: "\e015";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e016";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e017";
+    }
+  }
+  &.snow {
+    &:before, &.cloud:before {
+      content: "\e018";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e019";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e01a";
+    }
+  }
+  &.fog {
+    &:before, &.cloud:before {
+      content: "\e01b";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e01c";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e01d";
+    }
+  }
+  &.haze {
+    &:before {
+      content: "\e01e";
+    }
+    &.sun:before {
+      content: "\e01f";
+    }
+    &.moon:before {
+      content: "\e020";
+    }
+  }
+  &.wind {
+    &:before {
+      content: "\e021";
+    }
+    &.cloud:before {
+      content: "\e022";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e023";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e024";
+    }
+  }
+  &.lightning {
+    &:before, &.cloud:before {
+      content: "\e025";
+    }
+    &.sun:before, &.cloud.sun:before {
+      content: "\e026";
+    }
+    &.moon:before, &.cloud.moon:before {
+      content: "\e027";
+    }
+  }
+  &.sun {
+    &:before {
+      content: "\e028";
+    }
+    &.set:before {
+      content: "\e029";
+    }
+  }
+  &.sunset:before {
+    content: "\e029";
+  }
+  &.sun.rise:before, &.sunrise:before {
+    content: "\e02a";
+  }
+  &.sun.low:before, &.sun-low:before, &.low-sun:before {
+    content: "\e02b";
+  }
+  &.sun.lower:before, &.sun-lower:before, &.lower-sun:before {
+    content: "\e02c";
+  }
+  &.moon {
+    &:before {
+      content: "\e02d";
+    }
+    &.new:before {
+      content: "\e02e";
+    }
+    &.waxing.crescent:before, &.first-crescent:before {
+      content: "\e02f";
+    }
+    &.waxing.quarter:before, &.first-quarter:before, &.waxing.half:before, &.first-half:before {
+      content: "\e030";
+    }
+    &.waxing.gibbous:before, &.first-gibbous:before, &.waxing.three-quarter:before, &.first-three-quarter:before {
+      content: "\e031";
+    }
+    &.full:before {
+      content: "\e032";
+    }
+    &.waning.gibbous:before, &.last-gibbous:before, &.waning.three-quarter:before, &.last-three-quarter:before {
+      content: "\e033";
+    }
+    &.waning.quarter:before, &.last-quarter:before, &.waning.half:before, &.last-half:before {
+      content: "\e034";
+    }
+    &.waning.crescent:before, &.last-crescent:before {
+      content: "\e035";
+    }
+  }
+  &.snowflake:before {
+    content: "\e036";
+  }
+  &.tornado:before {
+    content: "\e037";
+  }
+  &.thermometer {
+    &.empty:before, &:before {
+      content: "\e038";
+    }
+    &.low:before {
+      content: "\e039";
+    }
+    &.medium-low:before {
+      content: "\e03a";
+    }
+    &.medium-high:before {
+      content: "\e03b";
+    }
+    &.high:before {
+      content: "\e03c";
+    }
+    &.full:before {
+      content: "\e03d";
+    }
+  }
+  &.celcius:before {
+    content: "\e03e";
+  }
+  &.farenheit:before {
+    content: "\e03f";
+  }
+  &.compass {
+    &:before {
+      content: "\e040";
+    }
+    &.north:before {
+      content: "\e041";
+    }
+    &.east:before {
+      content: "\e042";
+    }
+    &.south:before {
+      content: "\e043";
+    }
+    &.west:before {
+      content: "\e044";
+    }
+  }
+  &.umbrella:before {
+    content: "\e045";
+  }
+  &.sunglasses:before {
+    content: "\e046";
+  }
+  &.cloud {
+    &.cycle:before, &.refresh:before {
+      content: "\e047";
+    }
+    &.down:before, &.download:before {
+      content: "\e048";
+    }
+    &.up:before, &.upload:before {
+      content: "\e049";
+    }
+  }
+}
+
+html,body {
+  font-family: 'Arial';
+  text-align: center;
+  color: #7f868e;
+  padding: 25px 0 0 0;
+  margin: 0;
+  &.ride-no {
+    background-color: #eaeef2;
+    color: #7f868e;
+  }
+  &.ride-yes {
+    background-color: #fef8df;
+    color: #fe6c01;
+  }
+}
+
+.loading {
+  font-size: 30px;
+}
+
+.tweet {
+  background: url("../img/sprite.png") repeat scroll -49px 0 rgba(0, 0, 0, 0);
+  display: block;
+  left: 5px;
+  position: absolute;
+  top: 5px;
+  height: 28px;
+  width: 35px;
+  text-indent: -9999px;
+}
+
+.ride-no {
+  .tweet {
+    background: url("../img/sprite.png") repeat scroll -84px 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.ride-yes {
+  .tweet {
+    background: url("../img/sprite.png") repeat scroll -49px 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.description {
+  font-size: 100px;
+}
+
+.thermometer {
+  margin-right: 10px;
+}
+
+.weather {
+  font-family: 'ClimaconsRegular';
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.temperature {
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  top: -6px;
+}
+
+.format {
+  font-size: 24px;
+  font-weight: 300;
+  position: relative;
+  top: -6px;
+}
+
+.location {
+  bottom: -64px;
+  position: fixed;
+  width: 100%;
+  transition: bottom 0.4s ease-out;
+  -ms-transition: bottom 0.4s ease-out;
+  -moz-transition: bottom 0.4s ease-out;
+  -webkit-transition: bottom 0.4s ease-out;
+  &.active {
+    bottom: 0px;
+    transition: bottom 0.4s ease-out;
+    -ms-transition: bottom 0.4s ease-out;
+    -moz-transition: bottom 0.4s ease-out;
+    -webkit-transition: bottom 0.4s ease-out;
+  }
+  .inner {
+    margin-top: 20px;
+    i {
+      background: url("../img/sprite.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+      display: block;
+      height: 32px;
+      width: 24px;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+  }
+  .teleporter {
+    margin: 10px auto 0px;
+    background-color: $hellyeah;
+    width: 410px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+    input {
+      background-color: lighten($hellyeah, 30%);
+      border: 0;
+      font-family: 'Arial';
+      font-size: 18px;
+      color: $hellyeah;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 10px 15px;
+      width: 358px;
+      @include placeholder($hellyeah);
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        cursor: pointer;
+        font-size: 14px;
+        margin: 0px;
+        list-style: none;
+        border-bottom: 1px solid lighten($hellyeah, 10%);
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.ride-no {
+  .location {
+    .inner {
+      i {
+        background: url("../img/sprite.png") repeat scroll -24px 0 rgba(0, 0, 0, 0);
+      }
+    }
+    .teleporter {
+      background-color: $nope;
+      input {
+        color: $nope;
+        background-color: lighten($nope, 30%);
+        @include placeholder($nope);
+      }
+      ul li {
+        border-bottom: 1px solid lighten($nope, 10%);
+      }
+    }
+  }
+}
+
+.ride-yes {
+  .weather, .thermometer, .temperature, .format, .location {
+    color: $hellyeah;
+  }
+}
+
+.ride-no {
+  .weather, .thermometer, .temperature, .format, .location {
+    color: $nope;
+  }
+}
